@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnqy482yq1r6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ir17"]
+size = Vector2(16, 16)
+
+[sub_resource type="Gradient" id="Gradient_ctwta"]
+colors = PackedColorArray(0.427451, 0.160784, 0, 1, 1, 0.376471, 0.227451, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ljrny"]
+gradient = SubResource("Gradient_ctwta")
+width = 16
+height = 16
+fill_from = Vector2(0.587156, 1)
+fill_to = Vector2(0.591743, 0)
+
+[node name="Wall" type="StaticBody2D"]
+collision_layer = 2
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_2ir17")
+
+[node name="art" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_ljrny")
+centered = false

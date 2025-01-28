@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bexd27cr77v8i"]
+
+[ext_resource type="Script" path="res://tiles/door.gd" id="1_ubbyq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3t5ym"]
+size = Vector2(16, 16)
+
+[sub_resource type="Gradient" id="Gradient_0tlsm"]
+offsets = PackedFloat32Array(0.402597, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 0.376471, 0.227451, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u6epg"]
+gradient = SubResource("Gradient_0tlsm")
+width = 16
+height = 16
+fill = 2
+fill_from = Vector2(0.509174, 0.862385)
+fill_to = Vector2(0.527523, 0)
+
+[node name="door" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_ubbyq")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_3t5ym")
+
+[node name="art" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_u6epg")
+centered = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

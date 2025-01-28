@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnvb06wp58eh5"]
+
+[sub_resource type="Gradient" id="Gradient_dqg4s"]
+colors = PackedColorArray(0.950731, 0.457786, 0, 1, 0.480375, 0.254198, 0.0848785, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0n6lv"]
+gradient = SubResource("Gradient_dqg4s")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.504587, 0.518349)
+
+[node name="Floor" type="Sprite2D"]
+texture = SubResource("GradientTexture2D_0n6lv")
+centered = false
